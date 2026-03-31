@@ -71,8 +71,7 @@
 │  ├─ login.html
 │  └─ registration.html
 └─ static/
-   └─ img/
-      └─ 1.png
+   └─ img
 ```
 
 **Основные модели** (см. `__init__.py`):
@@ -126,8 +125,8 @@
 Если используете GitHub:
 
 ```powershell
-git clone <URL_репозитория> 
-cd <имя проекта>
+git clone https://github.com/ivan-artemev24/Python-1-Artemev
+cd Python-1-Artemev
 ```
 
 #### 2. Создание и активация виртуального окружения
