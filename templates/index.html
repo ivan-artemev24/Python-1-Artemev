@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Главная страница
+{% endblock %}
+
+{% block menu %}
+<ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+    <li><a href="/" class="nav-link px-2 text-white">Главная</a></li>
+    <li><a href="/add" class="nav-link px-2 text-secondary">Создать новость</a></li>
+</ul>
+{% endblock %}
+
+{% block main %}
+<h1>Главная страница</h1>
+{% if articles|length > 0 %}
+{% for a in articles %}
+    <div class="alert alert-info">
+        <h2>{{a.title}}</h2>
+        <p>{{a.intro}}</p>
+        <p><b>Дата: {{ a.date.date() }}</b></p>
+        <a href="/post/{{ a.id }}" class="btn btn-primary">Читать...</a>
+    </div>
+{% endfor %}
+{% else %}
+<p>Пока у нас нет статей</p>
+{% endif %}
+{% endblock %}

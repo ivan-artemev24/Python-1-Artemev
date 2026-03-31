@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Главная страница
+{% endblock %}
+
+{% block menu %}
+<ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+    <li><a href="/" class="nav-link px-2 text-secondary">Главная</a></li>
+    <li><a href="/add" class="nav-link px-2 text-secondary">Создать новость</a></li>
+</ul>
+{% endblock %}
+
+{% block main %}
+    <div class="alert alert-info">
+        <h2>{{article.title}}</h2>
+        <p>{{article.intro}}</p>
+        <p>{{article.text}}</p>
+        <p><b>Дата: {{ article.date.date() }}</b></p>
+         {% if current_user.is_authenticated and current_user.admin %}
+       <a href="/post/{{ article.id }}/del" class="btn btn-primary">Удалить</a>
+    <a href="/post/{{ article.id }}/update" class="btn btn-primary">Редактировать</a>
+        {% endif %}
+    </div>
+
+
+{% endblock %}

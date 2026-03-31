@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Создать пост
+{% endblock %}
+
+{% block menu %}
+<ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+    <li><a href="/" class="nav-link px-2 text-secondary">Главная</a></li>
+    <li><a href="/add" class="nav-link px-2 text-white">Создать новость</a></li>
+</ul>
+{% endblock %}
+
+{% block main %}
+<h1>Создать пост</h1>
+<form class="needs-validation" method="post">
+<input type="text" name="title" id="title" class="form-control" placeholder="Введите название статьи" required=""><br>
+<textarea name="intro" id="intro" class="form-control" placeholder="Введите анонс" required=""></textarea><br>
+<textarea name="text" id="text" class="form-control" placeholder="Введите текст статьи" required=""></textarea><br>
+<input type="submit" class="btn btn-primary" value="Отправить">
+</form>
+
+{% endblock %}
+
+
